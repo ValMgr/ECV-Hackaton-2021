@@ -1,0 +1,39 @@
+<a href="../../" class="btn btn-primary">Back</a>
+
+<div class="content" style="margin-top: 5vh;">
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" value="{{user.firstName}}">
+            </div>
+            <div class="form-group col-md-6">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName" value="{{user.lastName}}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="birthday">Birthday</label>
+            <input type="date" class="form-control" id="birthday" value="{{formFormatDate user.birthday}}">
+        </div>
+        <div id="submit" url="{{user._id}}" class="btn btn-success" onclick="updateUser()">Update</div>
+    </form>
+</div>
+
+
+<script>
+    function updateUser(){
+        let obj = {
+            firstName: document.getElementById('firstName').value,
+            lastName: document.getElementById('lastName').value,
+            birthday: document.getElementById('birthday').value,
+        }
+        xhttp = new XMLHttpRequest();
+        xhttp.open("PUT", window.location, true);
+        xhttp.setRequestHeader("Content-type", "application/json");
+        xhttp.send(JSON.stringify(obj));
+        setTimeout(() => {
+          window.location.href = '../' + document.getElementById('submit').getAttribute('url');
+        }, 500)
+    }
+</script>

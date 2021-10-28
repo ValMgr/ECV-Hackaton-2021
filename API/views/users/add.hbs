@@ -1,0 +1,56 @@
+<div class="content mt-2">
+    <form>
+        <div class="row">
+            <div class="form-group col-6">
+                <input type="text" class="form-control required" id="username" placeholder="Username">
+            </div>
+            <div class="form-group col-6">
+                <input type="text" class="form-control required" id="name" placeholder="Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control required" id="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <div class="form-group">
+                <input type="password" class="form-control required" id="password" placeholder="Password">
+            </div>
+        </div>
+        <p id="error" style="color:red;display:none;">Fields cannot be empty !</p>
+        <a href="../" class="btn btn-bordeaux mr-2">Back</a>
+        <div type="submit" class="btn btn-orange" onclick="addUser()">Add</div>
+
+    </form>
+</div>
+
+<script>
+    function addUser() {
+        const inputs = Array.from(document.querySelectorAll('input'));
+        const isInvalid = inputs.some(i => i.value == '')
+
+        if (!isInvalid) {
+            console.log('send data')
+           let obj = {
+                username: document.querySelector('#username').value,
+                fullname: document.querySelector('#name').value,
+                email: document.querySelector('#email').value,
+                password: document.querySelector('#password').value,
+                quizz: null,
+                box: 0
+            }
+            xhttp = new XMLHttpRequest();
+            xhttp.open("POST", window.location, true);
+            xhttp.setRequestHeader("Content-type", "application/json");
+            xhttp.send(JSON.stringify(obj));
+            setTimeout(() => {
+                window.location.href = '../../';
+            }, 500)
+        }
+        else {
+            document.getElementById('error').style.display = "block";
+            document.querySelectorAll('.required').forEach((el) => {
+                el.style.border = "1px solid red";
+            })
+        }
+    }
+</script>

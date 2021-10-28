@@ -1,0 +1,24 @@
+{
+  "name": "API",
+  "version": "1.0.0",
+  "description": "ECV Hackaton 2021 - API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "mongo": "docker run -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=secret -v db:/data/db mongo"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.0",
+    "express-session": "^1.17.2",
+    "moment": "^2.29.1",
+    "mongoose": "^5.12.3",
+    "passport": "^0.5.0",
+    "passport-auth0": "^1.4.1"
+  }
+}
