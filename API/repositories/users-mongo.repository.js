@@ -18,6 +18,14 @@ module.exports = class {
     });
   }
 
+  getOneByEmail(mail) {
+    return new Promise((resolve, reject) => {
+      User.findOne({ email: mail }, (err, user) => {
+        err ? reject(err) : resolve(user.toObject());
+      });
+    });
+  }
+
   create({ username, fullname, email, password, quizz, box }) {
     return new Promise((resolve, reject) => {
       User.create({ username, fullname, email, password, quizz, box }, (err, user) => {

@@ -1,8 +1,10 @@
-module.exports = (repository) => ({
+module.exports = (usersRepo, productsRepo) => ({
 
-    getUsers(req, res) {
-        repository.getAll().then((users) => {
-            res.render('home', { users });
+    getData(req, res) {
+        usersRepo.getAll().then((users) => {
+            productsRepo.getAll().then((products) => {
+                res.render('home', { users, products });
+            });
         });
     }
 });

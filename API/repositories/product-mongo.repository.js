@@ -5,10 +5,12 @@ module.exports = class {
     getAll() {
         return new Promise((resolve, reject) => {
             Product.find({}, (err, products) => {
-                err ? reject(err) : resolve(products.toObject());
+                err ? reject(err) : resolve(products.map(product => product.toObject()));
             });
         });
     }
+
+    
 
 
     getOne(id) {

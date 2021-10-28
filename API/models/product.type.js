@@ -3,5 +3,6 @@ module.exports = {
     vinyle: "Vinyle",
     book: "Livre",
     events: "Événement",
-    partition: "Partition"
+    partition: "Partition",
+    playlist: "Playlist"
 }

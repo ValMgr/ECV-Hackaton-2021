@@ -1,22 +1,25 @@
-<a href="../../" class="btn btn-primary">Back</a>
-
-<div class="content" style="margin-top: 5vh;">
+<div class="content mt-2">
     <form>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-            <label for="firstName">First Name</label>
-            <input type="text" class="form-control" id="firstName" value="{{user.firstName}}">
+        <div class="row">
+            <div class="form-group col-6">
+                <input type="text" class="form-control required" id="username" placeholder="Username" value="{{user.username}}">
             </div>
-            <div class="form-group col-md-6">
-            <label for="lastName">Last Name</label>
-            <input type="text" class="form-control" id="lastName" value="{{user.lastName}}">
+            <div class="form-group col-6">
+                <input type="text" class="form-control required" id="name" placeholder="Name" value="{{user.fullname}}">
             </div>
         </div>
         <div class="form-group">
-            <label for="birthday">Birthday</label>
-            <input type="date" class="form-control" id="birthday" value="{{formFormatDate user.birthday}}">
+            <input type="email" class="form-control required" id="email" placeholder="Email" value="{{user.email}}">
         </div>
-        <div id="submit" url="{{user._id}}" class="btn btn-success" onclick="updateUser()">Update</div>
+        <div class="form-group">
+            <div class="form-group">
+                <input type="password" class="form-control required" id="password" placeholder="Password" value={{user.pwd}}>
+            </div>
+        </div>
+        <p id="error" style="color:red;display:none;">Fields cannot be empty !</p>
+        <a href="../" class="btn btn-bordeaux mr-2">Back</a>
+        <div type="submit" class="btn btn-orange" onclick="addUser()">Add</div>
+
     </form>
 </div>
 
@@ -24,9 +27,12 @@
 <script>
     function updateUser(){
         let obj = {
-            firstName: document.getElementById('firstName').value,
-            lastName: document.getElementById('lastName').value,
-            birthday: document.getElementById('birthday').value,
+               username: document.querySelector('#username').value,
+                fullname: document.querySelector('#name').value,
+                email: document.querySelector('#email').value,
+                password: document.querySelector('#password').value,
+                quizz: user.quizz,
+                box: user.box
         }
         xhttp = new XMLHttpRequest();
         xhttp.open("PUT", window.location, true);

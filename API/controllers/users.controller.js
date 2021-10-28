@@ -20,6 +20,18 @@ module.exports = (repository) => ({
     });
   },
 
+  getUserByEmail(req, res, next){
+    repository.getOneByEmail(req.params.email).then((user) => {
+      if(user){
+        res.json(user);
+      } else {
+        res.sendStatus(404)
+      }
+    }).catch((err) => {
+      next(err);
+    });
+  },
+
   createUser(req, res, next) {
     if (req.method != 'POST') {
       res.render('users/add')

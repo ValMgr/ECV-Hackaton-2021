@@ -3,13 +3,20 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const exphbs = require('express-handlebars');
 
-const UsersRepository = require('./repositories/users-mongo.repository');
-const usersController = require('./controllers/users.controller');
 const pagesController = require('./controllers/pages.controller');
-const usersRoutes = require('./routes/users.routes');
 const pagesRoutes = require('./routes/pages.routes');
 
-const usersRepository = new UsersRepository;
+const m_usersRepository = require('./repositories/users-mongo.repository');
+const usersController = require('./controllers/users.controller');
+const usersRoutes = require('./routes/users.routes');
+
+const m_productRepository = require('./repositories/product-mongo.repository');
+const productController = require('./controllers/products.controller');
+const productRoutes = require('./routes/product.routes');
+
+
+const usersRepository = new m_usersRepository;
+const productRepository = new m_productRepository;
 
 const viewExt = '.hbs';
 const app = express();
@@ -17,6 +24,7 @@ const port = 8888;
 
 // Handlebars helpers
 const hbs = require('handlebars');
+const productsController = require('./controllers/products.controller');
 
 hbs.registerHelper('check', function (value, comparator) {
     return (value === comparator) ? 'No content' : value;
@@ -38,8 +46,9 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
+app.use('/products', productRoutes(express, productController(productRepository)))
 app.use('/users', usersRoutes(express, usersController(usersRepository)));
-app.use('/', pagesRoutes(express, pagesController(usersRepository)));
+app.use('/', pagesRoutes(express, pagesController(usersRepository, productRepository)));
 
 app.use((req, res) => {
     console.log('FALLBACK', req.method, req.url);

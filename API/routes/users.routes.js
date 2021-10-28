@@ -19,9 +19,9 @@ module.exports = (express, controller) => {
 
   router.delete('/delete/:id', controller.deleteUser);
 
-  router.get('/:id', controller.getUser);
+  router.get('/id/:id', controller.getUser);
 
-
+  router.get('/:email', controller.getUserByEmail)
 
   return router;
 };
