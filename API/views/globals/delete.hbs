@@ -11,7 +11,7 @@
         <p>Are you sure to delete this <i>{{type}}</i> ?</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-bordeaux" onclick="deleteUser()">Delete</button>
+        <button type="button" class="btn btn-danger" onclick="deleteUser()">Delete</button>
         <a href="../../../" type="button" class="btn btn-orange" data-dismiss="modal">Back</a>
       </div>
     </div>
@@ -19,13 +19,13 @@
 </div>
 
 <script>
-    function deleteUser(){
-        xhttp = new XMLHttpRequest();
-        xhttp.open("DELETE", window.location.href, true);
-        xhttp.send();
-        setTimeout(() => {
-          window.location.href = '../../../';
-        }, 500)
-    }
+  function deleteUser() {
+    xhttp = new XMLHttpRequest();
+    xhttp.open("DELETE", window.location.href, true);
+    xhttp.send();
+    setTimeout(() => {
+      window.location.href = '../../../';
+    }, 500)
+  }
 
 </script>

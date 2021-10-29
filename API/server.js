@@ -26,13 +26,23 @@ const port = 8888;
 const hbs = require('handlebars');
 const productsController = require('./controllers/products.controller');
 
-hbs.registerHelper('check', function (value, comparator) {
-    return (value === comparator) ? 'No content' : value;
+hbs.registerHelper('isSelected', function (value, comparator) {
+    console.log(value);
+    return value === comparator ? 'selected' : 'nop';
 });
 
 hbs.registerHelper('haveQuizz', function (value) {
     return (value === null) ? 'No' : 'Yes';
 });
+
+hbs.registerHelper('infiniteStock', function (value) {
+    return (value === -1) ? '&infin;' : value;
+});
+
+hbs.registerHelper('isFree', function (value) {
+    return (value === 0) ? 'Free' : value;
+});
+
 
 
 
@@ -46,7 +56,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-app.use('/products', productRoutes(express, productController(productRepository)))
+app.use('/product', productRoutes(express, productController(productRepository)))
 app.use('/users', usersRoutes(express, usersController(usersRepository)));
 app.use('/', pagesRoutes(express, pagesController(usersRepository, productRepository)));
 

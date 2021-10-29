@@ -6,12 +6,57 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <link rel="stylesheet" href="https://use.typekit.net/uva0qdp.css">
   <title>
     <%= htmlWebpackPlugin.options.title %>
   </title>
   <style>
+    :root {
+      --pink: #F176BB;
+      --dark-blue: #080735;
+      --beige: #FADFD5;
+    }
+
     body {
-      background-color: #1d1d35;
+      background-color: var(--dark-blue);
+      font-family: 'fenwick', sans-serif;
+    }
+
+    .btn {
+      padding: 1em 1.5em;
+      border: none;
+      text-decoration: none;
+      color: #FFF;
+      font-family: fenwick;
+      transition: 0.35s ease;
+    }
+
+    .btn-pink {
+      color: white;
+      background-color: var(--pink);
+    }
+
+    .btn-outline-pink {
+      border: 2px solid var(--pink);
+      color: var(--pink);
+    }
+
+    .btn-white {
+      background-color: #FFF;
+      color: var(--pink);
+    }
+
+    .btn-pink:hover {
+      color: #fff;
+      filter: brightness(0.9);
+    }
+
+    .ml-2 {
+      margin-left: 1em;
+    }
+
+    .mr-2 {
+      margin-right: 1em;
     }
   </style>
   <link rel="stylesheet" href="reset.css">

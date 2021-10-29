@@ -1,3 +1,6 @@
+const productType = require('../models/product.enum');
+const styleList = require('../models/style.enum');
+
 module.exports = (repository) => ({
 
     getProducts(req, res, next) {
@@ -22,7 +25,7 @@ module.exports = (repository) => ({
   
     createProduct(req, res, next) {
       if (req.method != 'POST') {
-        res.render('products/add')
+        res.render('products/add', {productType, styleList});
       } else {
         repository.create(req.body).then((product) => {
           res.json(product);
@@ -35,7 +38,7 @@ module.exports = (repository) => ({
     updateProduct(req, res, next) {
       repository.getOne(req.params.id).then((product) => {
         if (req.method != 'PUT') {
-          res.render('products/edit', { product })
+          res.render('products/edit', { product , productType, styleList});
         } else {
           repository.update(req.params.id, req.body).then((product) => {
             res.json(product)

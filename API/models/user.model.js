@@ -6,10 +6,24 @@ const usersSchema = mongoose.Schema({
   fullname: String,
   email: String,
   password: String,
-  quizz: [Quizz],
-  box: {type: Number, min: 0},
+  subscribtion: {type: Number, min: "0", max: "2"},
+  quizz: {
+    style: [String],
+    book: Boolean,
+    variety: Boolean,
+    popularity: Boolean,
+    cd: Boolean,
+    vinyle: Boolean,
+    events: Boolean,
+    concert: Boolean,
+    instrument: Boolean,
+    playlist: Boolean,
+    age: Number
+  },
+  box: {type: Number, min: 0, default: 0},
 }, {
   timestamps: true
 });
+
 
 module.exports = mongoose.model('User', usersSchema);

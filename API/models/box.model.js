@@ -6,4 +6,4 @@ const quizzSchema = mongoose.Schema({
   timestamps: true
 });
 
-module.exports = mongoose.model('Quizz', quizzSchema);
+module.exports = mongoose.model('Box', quizzSchema);

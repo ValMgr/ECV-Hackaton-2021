@@ -82,5 +82,43 @@ module.exports = (repository) => ({
         next(err);
       });
     }
+  },
+
+  
+  newQuizz(req, res, next) {
+    repository.getOne(req.params.id).then((user) => {
+      if (req.method != 'POST') {
+        res.render('quizz/add', {user});
+      }
+      else{
+        repository.update(req.params.id, req.body).then((user) => {
+          res.json(user)
+        }).catch((err) => {
+          next(err);
+        });
+      }
+    }).catch((err => {next(err); }));
+  },
+
+  getQuizz(req, res, next){
+    // get a quizz with ID
+  },
+
+  newBox(req, res, next){
+    // creating box
+  },
+
+  getAllBox(req, res, next){
+    // get all box
+  },
+
+  getBoxById(req, res, next){
+    // get box with ID
+  },
+
+  deleteBox(req, res, next){
+    // deleting box
   }
+
+
 });

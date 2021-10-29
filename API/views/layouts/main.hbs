@@ -39,7 +39,7 @@
     padding: 0 1em 0 1em;
   }
 
-  th{
+  th {
     text-align: center;
   }
 
@@ -48,14 +48,34 @@
     color: #FFF;
   }
 
+  .btn-orange:hover{
+    background-color: #e96336;
+    color: #FFF;
+  }
+
   .btn-bordeaux {
     background-color: #6E1342;
     color: #FFF;
   }
 
-  .btn-yellow {
-    background-color: #FEAF2D;
-    color: #000;
+  .btn-blue {
+    background-color: #2647F9;
+    color: #FFF;
+  }
+
+  .btn-blue:hover{
+    color: #FFF;
+    background-color: #1d3cec;
+  }
+
+  .btn-pink {
+    background-color: #F176BB;
+    color: #FFF;
+  }
+
+  .btn-pink:hover{
+    color: #FFF;
+    background-color: #d4589e;
   }
 
   .content {
@@ -81,17 +101,22 @@
     justify-content: space-between;
   }
 
-  #pwd svg{
+  #pwd svg {
     vertical-align: unset;
+  }
+
+  .my_container{
+    width: 90vw;
+    margin: auto;
   }
 </style>
 
 <body>
   <header>
-    <h1><span style="color:#FC7445">API</span> Backoffice</h1>
+    <a href="http://localhost:8888"><h1><span style="color:#FC7445">API</span> Backoffice</h1></a>
   </header>
 
-  <div class="container" style="padding-top: 20vh;">
+  <div class="my_container" style="padding-top: 20vh;">
     {{{body}}}
   </div>
 </body>

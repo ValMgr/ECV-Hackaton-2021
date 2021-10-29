@@ -1,8 +1,10 @@
 <div class="content mt-2">
+    <h2 class="mb-4">Edit user</h2>
     <form>
         <div class="row">
             <div class="form-group col-6">
-                <input type="text" class="form-control required" id="username" placeholder="Username" value="{{user.username}}">
+                <input type="text" class="form-control required" id="username" placeholder="Username"
+                    value="{{user.username}}">
             </div>
             <div class="form-group col-6">
                 <input type="text" class="form-control required" id="name" placeholder="Name" value="{{user.fullname}}">
@@ -13,33 +15,38 @@
         </div>
         <div class="form-group">
             <div class="form-group">
-                <input type="password" class="form-control required" id="password" placeholder="Password" value={{user.pwd}}>
+                <input type="password" class="form-control required" id="password" placeholder="Password"
+                    value={{user.password}}>
             </div>
         </div>
         <p id="error" style="color:red;display:none;">Fields cannot be empty !</p>
-        <a href="../" class="btn btn-bordeaux mr-2">Back</a>
-        <div type="submit" class="btn btn-orange" onclick="addUser()">Add</div>
+        <a href="../../" class="btn btn-danger mr-2">Back</a>
+        <div type="submit" class="btn btn-orange" onclick="updateUser()">Edit</div>
 
     </form>
 </div>
 
 
 <script>
-    function updateUser(){
+    function updateUser() {
         let obj = {
-               username: document.querySelector('#username').value,
-                fullname: document.querySelector('#name').value,
-                email: document.querySelector('#email').value,
-                password: document.querySelector('#password').value,
-                quizz: user.quizz,
-                box: user.box
-        }
+            username: document.querySelector('#username').value,
+            fullname: document.querySelector('#name').value,
+            email: document.querySelector('#email').value,
+            password: document.querySelector('#password').value,
+            quizz: null,
+            box: "{{user.box}}"
+        };
+        const quizz = "{{user.quizz}}";
+        if(quizz !== "") obj.quizz = quizz;
+        const subscription = "{{user.subscription}}";
+        if(subscription !== "") obj.subscription = subscription;
         xhttp = new XMLHttpRequest();
         xhttp.open("PUT", window.location, true);
         xhttp.setRequestHeader("Content-type", "application/json");
         xhttp.send(JSON.stringify(obj));
         setTimeout(() => {
-          window.location.href = '../' + document.getElementById('submit').getAttribute('url');
+            window.location.href = '../../';
         }, 500)
     }
 </script>

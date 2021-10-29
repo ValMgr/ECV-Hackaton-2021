@@ -1,0 +1,72 @@
+<div class="content mt-2">
+    <h2 class="mb-2">New quizz</h2>
+    <h3 class="mb-4">User: {{user.fullname}}</h3>
+    <form>
+        <div class="form-group row m-0 mb-2">
+            <div class="form-check mr-3">
+                <input type="checkbox" class="form-check-input" id="book">
+                <label class="form-check-label" for="book">Book?</label>
+            </div>
+            <div class="form-check mr-3">
+                <input type="checkbox" class="form-check-input" id="cd">
+                <label class="form-check-label" for="cd">cd?</label>
+            </div>
+            <div class="form-check mr-3">
+                <input type="checkbox" class="form-check-input" id="vinyle">
+                <label class="form-check-label" for="vinyle">Vinyle?</label>
+            </div>
+            <div class="form-check mr-3">
+                <input type="checkbox" class="form-check-input" id="book">
+                <label class="form-check-label" for="book">Book?</label>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control required" id="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <div class="form-group">
+                <input type="password" class="form-control required" id="password" placeholder="Password">
+            </div>
+        </div>
+        <p id="error" style="color:red;display:none;">Fields cannot be empty !</p>
+        <a href="../../../../" class="btn btn-danger mr-2">Back</a>
+        <div type="submit" class="btn btn-orange" onclick="createNewQuizz()">Edit</div>
+
+    </form>
+</div>
+
+
+<script>
+    function createNewQuizz() {
+        let style;
+        let obj = {
+            username: "{{user.username}}",
+            fullname: "{{user.fullname}}",
+            email: "{{user.email}}",
+            password: "{{user.password}}",
+            subscribtion: document.querySelector('#subscribtion'),
+            quizz: {
+                style: style,
+                book: document.querySelector('#book'),
+                variety: document.querySelector('#popularity'),
+                cd: document.querySelector('#cd'),
+                vinyle: document.querySelector('#vinyle'),
+                events: document.querySelector('#events'),
+                concert: document.querySelector('#concert'),
+                instrument: document.querySelector('#instrument'),
+                playlist: document.querySelector('#playlist'),
+                age: document.querySelector('#age')
+            },
+            box: "{{user.box}}",
+        }
+
+        xhttp = new XMLHttpRequest();
+        xhttp.open("PUT", window.location, true);
+        xhttp.setRequestHeader("Content-type", "application/json");
+        xhttp.send(JSON.stringify(obj));
+        setTimeout(() => {
+            window.location.href = '../../';
+        }, 500)
+    }
+</script>

@@ -1,4 +1,5 @@
 <div class="content mt-2">
+    <h2 class="mb-4">New user</h2>
     <form>
         <div class="row">
             <div class="form-group col-6">
@@ -17,7 +18,7 @@
             </div>
         </div>
         <p id="error" style="color:red;display:none;">Fields cannot be empty !</p>
-        <a href="../" class="btn btn-bordeaux mr-2">Back</a>
+        <a href="../" class="btn btn-danger mr-2">Back</a>
         <div type="submit" class="btn btn-orange" onclick="addUser()">Add</div>
 
     </form>
@@ -29,13 +30,11 @@
         const isInvalid = inputs.some(i => i.value == '')
 
         if (!isInvalid) {
-            console.log('send data')
-           let obj = {
+            let obj = {
                 username: document.querySelector('#username').value,
                 fullname: document.querySelector('#name').value,
                 email: document.querySelector('#email').value,
                 password: document.querySelector('#password').value,
-                quizz: null,
                 box: 0
             }
             xhttp = new XMLHttpRequest();

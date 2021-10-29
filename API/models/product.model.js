@@ -3,13 +3,13 @@ const mongoose = require('mongoose');
 const productSchema = mongoose.Schema({
     fullname: String,
     type: String,
-    stock: { type: Number, min: 0 },
+    stock: { type: Number, min: -1 },
     price: { type: Number, min: 0 },
     style: [String],
     mood: [String],
-    popularity: { type: Number, min: 0, max: 100 }
+    popularity: String
 }, {
     timestamps: true
 });
 
-module.exports = mongoose.model('Quizz', productSchema);
+module.exports = mongoose.model('Product', productSchema);

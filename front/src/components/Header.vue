@@ -1,13 +1,67 @@
 <template>
   <header class="header-site">
-      <div class="logo">
-          <img src="../assets/logo_1.png" alt="logo">
-      </div>
+    <div class="logo">
+      <a href="/">
+        <svg
+          width="133"
+          height="39"
+          viewBox="0 0 133 39"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clip-path="url(#clip0_200:448)">
+            <path
+              d="M0.99549 12.2091C0.541681 11.8288 0.220833 11.3107 0.0804638 10.7313C-0.0599054 10.1519 -0.0123312 9.54216 0.216141 8.99232L0.386344 8.58853H1.5061V4.81829L7.34226 0V8.58853H14.5804L13.9399 13.2027H7.34226V20.6569C7.34226 23.6514 8.73972 25.0306 10.061 25.0306C11.4988 25.0306 12.2199 24.5769 13.38 23.1251L16.3406 28.1158C14.8984 29.5767 12.5021 30.2209 10.6612 30.2209C5.14306 30.2209 1.5061 27.1857 1.5061 20.6252V12.6355L0.99549 12.2091Z"
+              fill="#FADFD5"
+            />
+            <path
+              d="M36.6787 17.658C36.6787 20.4528 34.802 20.8974 32.6028 20.8974H22.1264C22.525 23.5334 24.4868 25.0306 27.0846 25.0306C29.5257 25.0306 30.9635 24.1232 31.9623 22.8846L36.1994 25.0715C34.0002 28.9188 31.165 30.2119 26.8428 30.2119C21.1275 30.2119 16.541 25.3936 16.541 18.9556C16.541 12.7581 20.7423 8.1394 26.8428 8.1394C32.3609 8.1394 36.6787 11.583 36.6787 17.658ZM22.207 16.9276H31.6129C31.2412 14.4594 29.1136 13.1573 27.004 13.1573C24.8944 13.1573 22.6862 14.6228 22.207 16.9276Z"
+              fill="#FADFD5"
+            />
+            <path
+              d="M98.4358 19.845C98.4358 26.528 93.3208 30.2801 89.9615 30.2801C87.2025 30.2801 85.5631 29.5541 84.6808 28.5379V39.0183H79.0059V8.91081L81.4828 8.34369C82.2845 8.86998 83.1221 10.1585 83.4849 11.1793C84.3225 9.60044 87.4802 8.22119 89.9212 8.22119C94.9556 8.22119 98.4358 12.5949 98.4358 19.845ZM84.4837 15.6346V22.6398C84.9316 24.137 87.0815 25.2304 88.2013 25.2304C90.8394 25.2304 92.9177 22.6398 92.9177 19.6453C92.9177 16.0793 91.4396 13.4886 88.6805 13.4886C87.2025 13.4886 84.9226 14.5185 84.4837 15.6346Z"
+              fill="#FADFD5"
+            />
+            <path
+              d="M111.42 8.13948C112.87 8.10971 114.31 8.37316 115.658 8.91441C117.006 9.45566 118.233 10.2638 119.268 11.2916C120.304 12.3193 121.126 13.546 121.688 14.8998C122.25 16.2536 122.539 17.7073 122.539 19.1757C122.539 20.6441 122.25 22.0978 121.688 23.4516C121.126 24.8054 120.304 26.0321 119.268 27.0598C118.233 28.0876 117.006 28.8958 115.658 29.437C114.31 29.9783 112.87 30.2417 111.42 30.2119C109.979 30.2409 108.547 29.9748 107.21 29.4294C105.872 28.884 104.658 28.0707 103.638 27.0381C102.619 26.0056 101.816 24.7751 101.278 23.4206C100.739 22.066 100.476 20.6152 100.505 19.1553C100.484 17.6994 100.753 16.2542 101.295 14.9056C101.836 13.557 102.64 12.3324 103.659 11.3048C104.677 10.2771 105.889 9.46736 107.222 8.9236C108.556 8.37983 109.983 8.11317 111.42 8.13948ZM111.42 24.7857C112.885 24.7556 114.282 24.1527 115.318 23.1032C116.354 22.0538 116.949 20.6391 116.979 19.1553C116.93 17.6859 116.326 16.2915 115.292 15.2599C114.257 14.2283 112.872 13.6381 111.42 13.6111C109.957 13.6111 108.553 14.2 107.518 15.2482C106.484 16.2965 105.902 17.7182 105.902 19.2007C105.902 20.6831 106.484 22.1048 107.518 23.1531C108.553 24.2013 109.957 24.7902 111.42 24.7902V24.7857Z"
+              fill="#FADFD5"
+            />
+            <path d="M133 24.627H127.603V30.094H133V24.627Z" fill="#F176BB" />
+            <path
+              d="M45.6863 30.2118H40.3115V9.19192L42.6406 8.77905C43.1375 9.05902 43.6043 9.39049 44.0336 9.76812H44.0649C44.577 10.208 44.989 10.7548 45.2728 11.3711C45.5565 11.9875 45.7052 12.6587 45.7087 13.3387L45.6863 30.2118Z"
+              fill="#F176BB"
+            />
+            <path
+              d="M68.4976 30.2118H73.8724V9.19192L71.5388 8.77905C71.042 9.05902 70.5751 9.39049 70.1459 9.76812H70.119C69.6064 10.2077 69.1936 10.7544 68.9091 11.3707C68.6246 11.987 68.4751 12.6584 68.4707 13.3387L68.4976 30.2118Z"
+              fill="#F176BB"
+            />
+            <path
+              d="M59.862 15.3442H54.5454V30.212H59.862V15.3442Z"
+              fill="#F176BB"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_200:448">
+              <rect width="133" height="39" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      </a>
+    </div>
 
-      <nav class="router">
-          <router-link to="/">Home</router-link>
-          <router-link to="/profil">Profil</router-link>
-      </nav>
+    <nav class="router">
+      <router-link to="/concept">Concept</router-link>
+      <router-link to="/boxs">Nos boxs</router-link>
+      <router-link to="/tarifs">Tarifs</router-link>
+      <router-link to="/partenaires">Partenaires</router-link>
+      <router-link to="/temoignages">Témoignages</router-link>
+      <span id="router__tracker"></span>
+    </nav>
+
+    <nav class="connection">
+      <router-link to="/profil">Me connecter &#10142;</router-link>
+      <button class="btn btn-pink ml-2">Je m'abonne</button>
+    </nav>
   </header>
 </template>
 
@@ -15,34 +69,66 @@
 export default {
   name: "Header",
   props: {},
+  mounted: function () {
+    const tracker = document.querySelector("#router__tracker");
+    const router = document.querySelector("nav.router");
+    if (router)
+      router.querySelectorAll("a").forEach((e) =>
+        e.addEventListener("mouseover", () => {
+          tracker.style.width = e.offsetWidth + "px";
+          tracker.style.left = e.offsetLeft + "px";
+        })
+      );
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .header-site {
-  width: 100vw;
+  width: calc(100vw - 4em);
   display: flex;
-  box-shadow: 0 0.25rem 1rem #08073585;
+  padding: 2em;
   align-items: center;
   justify-content: space-between;
 }
 
-.logo{
-    margin:1em;
+#router__tracker {
+  position: absolute;
+  bottom: 0;
+  height: 1px;
+  left: 0;
+  width: 70px;
+  display: block;
+  background-color: var(--pink);
+  transition: 0.35s ease;
 }
 
-.logo img{
-    max-width: 200px;
+nav.connection a {
+  color: var(--pink);
 }
 
-.router{
-    margin: 1em;
+.logo {
+  margin: 1em;
 }
 
-nav a{
-    color: #FC7445;
-    margin-right: 1em;
+.logo img {
+  max-width: 200px;
 }
 
+.router {
+  margin: 1em;
+}
+
+nav {
+  position: relative;
+  padding: 0.5em 0;
+}
+
+nav a {
+  color: var(--beige);
+  margin-right: 1.5em;
+  text-decoration: none;
+  font-family: fenwick;
+}
 </style>
